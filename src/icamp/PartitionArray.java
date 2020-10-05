@@ -25,11 +25,14 @@ public class PartitionArray {
 
   private static int[] moveZerosToStartKeepNonZeroOrder(int[] arr) {
     int boundary = arr.length - 1;
-    for (int i = 0; i < arr.length; i++) {
+    int i = 0;
+    while (i < boundary) {
       if (arr[i] != 0) {
         swap(arr, boundary, i);
         boundary--;
+        continue;
       }
+      i++;
     }
     return arr;
   }
